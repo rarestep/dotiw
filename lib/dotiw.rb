@@ -18,8 +18,7 @@ module ActionView
       end
 
       def distance_of_time(seconds, options = {})
-        options.reverse_merge(include_seconds: true)
-        options[:include_seconds] = false
+        options.reverse_merge!(include_seconds: true)
         display_time_in_words DOTIW::TimeHash.new(seconds).to_hash, options
       end
 
@@ -46,9 +45,7 @@ module ActionView
 
       private
         def display_time_in_words(hash, options = {})
-          options = {
-            :include_seconds => false
-          }.update(options).symbolize_keys
+          options.reverse_merge!(include_seconds: false).symbolize_keys
 
           I18n.locale = options[:locale] if options[:locale]
 
