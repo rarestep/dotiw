@@ -45,7 +45,11 @@ module ActionView
 
       private
         def display_time_in_words(hash, options = {})
-          options.reverse_merge!(include_seconds: false).symbolize_keys
+          options.reverse_merge!(
+              include_seconds: false,
+              two_words_connector: ', ',
+              last_word_connector: ', '
+          ).symbolize_keys
 
           I18n.locale = options[:locale] if options[:locale]
 
