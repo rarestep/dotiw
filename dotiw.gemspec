@@ -7,8 +7,6 @@ require 'dotiw/version'
 Gem::Specification.new do |s|
   s.name = 'dotiw'
   s.version = DOTIW::VERSION
-  s.platform = Gem::Platform::RUBY
-  s.required_rubygems_version = '>= 1.3.6'
   s.authors = ["Ryan Bigg"]
   s.date = %q{2010-12-23}
   s.description = "Better distance_of_time_in_words for Rails"
